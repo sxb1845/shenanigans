@@ -1,0 +1,9 @@
+name: Test
+on: workflow_call
+jobs:
+  test:
+    name: Local Build and Testing
+    steps:
+      - name: Run Tests
+        run: |
+          echo it works guys

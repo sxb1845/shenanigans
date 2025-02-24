@@ -1,0 +1,39 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+concurrency:
+  group: main
+jobs:
+  test:
+    uses: .github/workflows/test.yml
+
+  install:
+    name: Install
+    needs: test
+    if: success()
+    steps:
+      - name: Store Keys
+        run: |
+          echo secrets!!!
+
+  deploy-dev:
+    name: Deploy for Development
+    needs: install
+    if: success()
+    steps:
+      - name: Store Keys
+        run: |
+          echo secrets!!!
+
+  deploy-prd:
+    name: Deploy for Production
+    needs: install
+    if: success() && startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Store Keys
+        run: |
+          echo secrets!!!
+
+
