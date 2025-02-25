@@ -3,7 +3,7 @@ on: pull_request
 jobs:
   test:
     name: Local Build and Testing
-    runs-on: linux
+    runs-on: ubuntu-latest
     steps:
       - name: Run Tests
         run: |
