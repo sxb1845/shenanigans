@@ -1,8 +1,16 @@
 name: Test
 on: [pull_request, workflow_call]
 jobs:
-  test:
-    name: Local Build and Testing
+  test-frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: |
+          echo it works guys
+
+  test-backend:
+    name: Test Backend
     runs-on: ubuntu-latest
     steps:
       - name: Run Tests
