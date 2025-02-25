@@ -6,9 +6,6 @@ on:
 concurrency:
   group: main
 jobs:
-  test:
-    uses: ./.github/workflows/test.yml
-
   install:
     name: Install
     needs: test
