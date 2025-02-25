@@ -3,6 +3,7 @@ on: workflow_call
 jobs:
   test:
     name: Local Build and Testing
+    runs-on: linux
     steps:
       - name: Run Tests
         run: |

@@ -8,6 +8,7 @@ concurrency:
 jobs:
   install:
     name: Install
+    runs-on: linux
     needs: test
     if: success()
     steps:
@@ -17,6 +18,7 @@ jobs:
 
   deploy-dev:
     name: Deploy for Development
+    runs-on: linux
     needs: install
     if: success()
     steps:
@@ -26,6 +28,7 @@ jobs:
 
   deploy-prd:
     name: Deploy for Production
+    runs-on: linux
     needs: install
     if: success() && startsWith(github.ref, 'refs/tags/')
     steps:
