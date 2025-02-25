@@ -9,8 +9,6 @@ jobs:
   install:
     name: Install
     runs-on: linux
-    needs: test
-    if: success()
     steps:
       - name: Store Keys
         run: |
